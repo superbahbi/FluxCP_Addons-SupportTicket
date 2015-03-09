@@ -18,8 +18,7 @@ return array(
 	'DepNameMaxLen'		=> 23, // maximum char length for department name
 	'TicketSearchMinLen'=> 1, // minimum char length for search query
 	'SupportFromName'	=> "FluxCP Staff Team", // name of the from to send in mail
-	'ThemeName'			=> "default", // change this to your theme name
-	
+
 	'TicketDelGroup'	=> AccountLevel::HIGHGM, // group level who can delete a ticket
 	'TicketEditGroup'	=> AccountLevel::HIGHGM, // group level who can edit a ticket
 	'TicketResolveGroup'=> AccountLevel::LOWGM, // group level who can resolve a ticket
