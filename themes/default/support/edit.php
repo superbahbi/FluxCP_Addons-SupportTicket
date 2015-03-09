@@ -1,10 +1,10 @@
 <?php if (!defined('FLUX_ROOT')) exit; ?>
 <h2><?php echo htmlspecialchars(Flux::message('EditSupportHeading')) ?>
 	<a title='Refresh this page' href='<?= getURL($params->get('id'), $this->url('support', 'edit')) ?>'>
-		<img src='<?= Flux::config('BaseURI').FLUX_ADDON_DIR.'/support/themes/'.Flux::config('ThemeName').'/img/refresh.png' ?>' alt='Refresh' border='' />
+		<img src='<?= Flux::config('AddonThemeName').'/img/refresh.png' ?>' alt='Refresh' border='' />
 	</a>
 	<a title='View Support Ticket' href='<?= getURL($params->get('id'), $this->url('support', 'view')) ?>'>
-		<img src='<?= Flux::config('BaseURI').FLUX_ADDON_DIR.'/support/themes/'.Flux::config('ThemeName').'/img/view.png' ?>' alt='View' border='' />
+		<img src='<?= Flux::config('AddonThemeName').'/img/view.png' ?>' alt='View' border='' />
 	</a>
 	</h2>
 <?php if (!empty($errorMessage)): ?>
@@ -99,7 +99,7 @@
 
 
 
-<script src='<?= Flux::config('BaseURI').FLUX_ADDON_DIR.'/support/themes/'.Flux::config('ThemeName').'/js/nicEdit.js' ?>' type='text/javascript'>
+<script src='<?= Flux::config('AddonThemeName').'/js/nicEdit.js' ?>' type='text/javascript'>
 </script>
 <script type='text/javascript'>
 
@@ -122,7 +122,7 @@
 			'outdent' : {name : __('Remove Indent'), command : 'outdent', noActive : true},
 			'hr' : {name : __('Horizontal Rule'), command : 'insertHorizontalRule', noActive : true}
 		},
-		iconsPath : '<?= Flux::config('BaseURI').FLUX_ADDON_DIR.'/support/themes/'.Flux::config('ThemeName').'/img/nicEditorIcons.gif' ?>',
+		iconsPath : '<?= Flux::config('AddonThemeName').'/img/nicEditorIcons.gif' ?>',
 		buttonList : ['save','bold','italic','underline','left','center','right','justify','ol','ul','fontSize','fontFamily','fontFormat','indent','outdent','image','upload','link','unlink','forecolor','bgcolor'],
 		iconList : {"bgcolor":1,"forecolor":2,"bold":3,"center":4,"hr":5,"indent":6,"italic":7,"justify":8,"left":9,"ol":10,"outdent":11,"removeformat":12,"right":13,"save":24,"strikethrough":15,"subscript":16,"superscript":17,"ul":18,"underline":19,"image":20,"link":21,"unlink":22,"close":23,"arrow":25,"upload":26}
 		

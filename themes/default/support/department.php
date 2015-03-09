@@ -52,7 +52,7 @@
 <form action="<?php echo $this->urlWithQs ?>" method="post">
 	<table class='generic-form-table'>
 		<button title='Delete' name='take_action' value='delete' onclick="if(!confirm('Are you sure about this?')) return false;" style='background:none;border:none;cursor:pointer'>
-		<img src='<?php echo Flux::config('BaseURI').FLUX_ADDON_DIR.'/support/themes/'.Flux::config('ThemeName').'/img/delete.png' ?>' alt='Delete' border='' /> Delete
+		<img src='<?php echo Flux::config('AddonThemeName').'/img/delete.png' ?>' alt='Delete' border='' /> Delete
 		</button>
 	</table>
 

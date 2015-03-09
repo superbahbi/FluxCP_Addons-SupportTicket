@@ -21,39 +21,39 @@
 		<table>
 			<tr>
 				<td><button title='Unsubscribe' name='take_action' value='unsubscribe' style='background:none;border:none;cursor:pointer'>
-						<img src='<?php echo Flux::config('BaseURI').FLUX_ADDON_DIR.'/support/themes/'.Flux::config('ThemeName').'/img/unsubscribe.png' ?>' alt='Unsubscribe' border='' />
+						<img src='<?php echo Flux::config('AddonThemeName').'/img/unsubscribe.png' ?>' alt='Unsubscribe' border='' />
 						Unsubscribe
 					</button>
 				</td>
 				<td><button title='Subscribe' name='take_action' value='subscribe' style='background:none;border:none;cursor:pointer'>
-						<img src='<?php echo Flux::config('BaseURI').FLUX_ADDON_DIR.'/support/themes/'.Flux::config('ThemeName').'/img/subscribe.png' ?>' alt='Subscribe' border='' />
+						<img src='<?php echo Flux::config('AddonThemeName').'/img/subscribe.png' ?>' alt='Subscribe' border='' />
 						Subscribe
 					</button>
 				</td>
 				<?php if ($session->account->$group_col >= Flux::config('TicketCloseGroup')): ?>
 					<td><button title='Close' name='take_action' value='close' style='background:none;border:none;cursor:pointer'>
-							<img src='<?php echo Flux::config('BaseURI').FLUX_ADDON_DIR.'/support/themes/'.Flux::config('ThemeName').'/img/close.png' ?>' alt='Close' border='' />
+							<img src='<?php echo Flux::config('AddonThemeName').'/img/close.png' ?>' alt='Close' border='' />
 							Close
 						</button>
 					</td>
 				<?php endif ?>
 				<?php if ($session->account->$group_col >= Flux::config('TicketOpenGroup')): ?>
 					<td><button title='Open' name='take_action' value='open' style='background:none;border:none;cursor:pointer'>
-							<img src='<?php echo Flux::config('BaseURI').FLUX_ADDON_DIR.'/support/themes/'.Flux::config('ThemeName').'/img/open.png' ?>' alt='Open' border='' />
+							<img src='<?php echo Flux::config('AddonThemeName').'/img/open.png' ?>' alt='Open' border='' />
 							Open
 						</button>
 					</td>
 				<?php endif ?>
 				<?php if ($session->account->$group_col >= Flux::config('TicketResolveGroup')): ?>
 					<td><button title='Resolve' name='take_action' value='resolve' style='background:none;border:none;cursor:pointer'>
-							<img src='<?php echo Flux::config('BaseURI').FLUX_ADDON_DIR.'/support/themes/'.Flux::config('ThemeName').'/img/resolve.png' ?>' alt='Resolve' border='' />
+							<img src='<?php echo Flux::config('AddonThemeName').'/img/resolve.png' ?>' alt='Resolve' border='' />
 							Resolve
 						</button>
 					</td>
 				<?php endif ?>
 				<?php if ($session->account->$group_col >= Flux::config('TicketDelGroup')): ?>
 					<td><button title='Delete' name='take_action' value='delete' onclick="if(!confirm('Are you sure about this?')) return false;" style='background:none;border:none;cursor:pointer'>
-							<img src='<?php echo Flux::config('BaseURI').FLUX_ADDON_DIR.'/support/themes/'.Flux::config('ThemeName').'/img/delete.png' ?>' alt='Delete' border='' />
+							<img src='<?php echo Flux::config('AddonThemeName').'/img/delete.png' ?>' alt='Delete' border='' />
 							Delete
 						</button>
 					</td>

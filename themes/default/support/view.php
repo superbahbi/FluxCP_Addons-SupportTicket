@@ -1,7 +1,8 @@
 <?php if (!defined('FLUX_ROOT')) exit; ?>
 <h2><?php echo htmlspecialchars(Flux::message('ViewSupportHeading')) ?>
+<?php echo Flux::config('Theme') ?>
 	<a title='Refresh this page' href='<?php echo getURL($params->get('id'), $this->url('support', 'view')) ?>'>
-		<img src='<?php echo Flux::config('BaseURI').FLUX_ADDON_DIR.'/support/themes/'.Flux::config('ThemeName').'/img/refresh.png' ?>' alt='Refresh' border='' />
+		<img src='<?php echo Flux::config('AddonThemeName').'/img/refresh.png' ?>' alt='Refresh' border='' />
 	</a></h2>
 <?php if (!empty($errorMessage)): ?>
 	<p class="red"><?php echo htmlspecialchars($errorMessage) ?></p>
@@ -17,48 +18,48 @@
 			<tr>
 				<?php if (isSubscribed($ticket_res->id, $session->account->account_id, $server)): ?>
 					<td><button title='Unsubscribe' name='take_action' value='unsubscribe' style='background:none;border:none;cursor:pointer'>
-							<img src='<?php echo Flux::config('BaseURI').FLUX_ADDON_DIR.'/support/themes/'.Flux::config('ThemeName').'/img/unsubscribe.png' ?>' alt='Unsubscribe' border='' />
+							<img src='<?php echo Flux::config('AddonThemeName').'/img/unsubscribe.png' ?>' alt='Unsubscribe' border='' />
 							Unsubscribe
 						</button>
 					</td>
 				<?php else: ?>
 					<td><button title='Subscribe' name='take_action' value='subscribe' style='background:none;border:none;cursor:pointer'>
-							<img src='<?php echo Flux::config('BaseURI').FLUX_ADDON_DIR.'/support/themes/'.Flux::config('ThemeName').'/img/subscribe.png' ?>' alt='Subscribe' border='' />
+							<img src='<?php echo Flux::config('AddonThemeName').'/img/subscribe.png' ?>' alt='Subscribe' border='' />
 							Subscribe
 						</button>
 					</td>
 				<?php endif ?>
 				<?php if ($session->account->$group_col >= Flux::config('TicketCloseGroup') && $ticket_res->status != 0): ?>
 					<td><button title='Close' name='take_action' value='close' style='background:none;border:none;cursor:pointer'>
-							<img src='<?php echo Flux::config('BaseURI').FLUX_ADDON_DIR.'/support/themes/'.Flux::config('ThemeName').'/img/close.png' ?>' alt='Close' border='' />
+							<img src='<?php echo Flux::config('AddonThemeName').'/img/close.png' ?>' alt='Close' border='' />
 							Close
 						</button>
 					</td>
 				<?php endif ?>
 				<?php if ($session->account->$group_col >= Flux::config('TicketOpenGroup') && $ticket_res->status != 1): ?>
 					<td><button title='Open' name='take_action' value='open' style='background:none;border:none;cursor:pointer'>
-							<img src='<?php echo Flux::config('BaseURI').FLUX_ADDON_DIR.'/support/themes/'.Flux::config('ThemeName').'/img/open.png' ?>' alt='Open' border='' />
+							<img src='<?php echo Flux::config('AddonThemeName').'/img/open.png' ?>' alt='Open' border='' />
 							Open
 						</button>
 					</td>
 				<?php endif ?>
 				<?php if ($session->account->$group_col >= Flux::config('TicketResolveGroup') && $ticket_res->status != 2): ?>
 					<td><button title='Resolve' name='take_action' value='resolve' style='background:none;border:none;cursor:pointer'>
-							<img src='<?php echo Flux::config('BaseURI').FLUX_ADDON_DIR.'/support/themes/'.Flux::config('ThemeName').'/img/resolve.png' ?>' alt='Resolve' border='' />
+							<img src='<?php echo Flux::config('AddonThemeName').'/img/resolve.png' ?>' alt='Resolve' border='' />
 							Resolve
 						</button>
 					</td>
 				<?php endif ?>
 				<?php if ($session->account->$group_col >= Flux::config('TicketDelGroup')): ?>
 					<td><button title='Delete' name='take_action' value='delete' onclick="if(!confirm('Are you sure about this?')) return false;" style='background:none;border:none;cursor:pointer'>
-							<img src='<?php echo Flux::config('BaseURI').FLUX_ADDON_DIR.'/support/themes/'.Flux::config('ThemeName').'/img/delete.png' ?>' alt='Delete' border='' />
+							<img src='<?php echo Flux::config('AddonThemeName').'/img/delete.png' ?>' alt='Delete' border='' />
 							Delete
 						</button>
 					</td>
 				<?php endif ?>
 				<?php if ($session->account->$group_col >= Flux::config('TicketEditGroup')): ?>
 					<td><button type='button' title='Edit' onclick="parent.location='<?php echo getURL($ticket_res->id, $this->url('support', 'edit')) ?>'" style='background:none;border:none;cursor:pointer'>
-							<img src='<?php echo Flux::config('BaseURI').FLUX_ADDON_DIR.'/support/themes/'.Flux::config('ThemeName').'/img/edit.png' ?>' alt='Edit' border='' />
+							<img src='<?php echo Flux::config('AddonThemeName').'/img/edit.png' ?>' alt='Edit' border='' />
 							Edit
 						</button>
 					</td>
@@ -147,7 +148,7 @@
 						<?php if ($session->account->$group_col >= Flux::config('TicketShowUsername')): ?>
 						<a href='<?php echo getURL($ticket_res->account_id, $this->url('account', 'view')) ?>'>
 						<?php endif ?>
-							<?php echo (getGroupID($row->account_id, $server) >= AccountLevel::LOWGM ? "<img src='".Flux::config('BaseURI').FLUX_ADDON_DIR.'/support/themes/'.Flux::config('ThemeName').'/img/staff.png'."' alt='Staff' border='' title='Staff' />" : "")." ".getNickname($row->account_id, $server) ?>
+							<?php echo (getGroupID($row->account_id, $server) >= AccountLevel::LOWGM ? "<img src='".Flux::config('AddonThemeName').'/img/staff.png'."' alt='Staff' border='' title='Staff' />" : "")." ".getNickname($row->account_id, $server) ?>
 						
 						<?php if ($session->account->$group_col >= Flux::config('TicketShowUsername')): ?>
 						</a>
@@ -173,7 +174,7 @@
 	<?php endif ?>
 
 
-<script src='<?php echo Flux::config('BaseURI').FLUX_ADDON_DIR.'/support/themes/'.Flux::config('ThemeName').'/js/nicEdit.js' ?>' type='text/javascript'>
+<script src='<?php echo Flux::config('AddonThemeName').'/js/nicEdit.js' ?>' type='text/javascript'>
 </script>
 <script type='text/javascript'>
 
@@ -207,7 +208,7 @@
 			'outdent' : {name : __('Remove Indent'), command : 'outdent', noActive : true},
 			'hr' : {name : __('Horizontal Rule'), command : 'insertHorizontalRule', noActive : true}
 		},
-		iconsPath : '<?php echo Flux::config('BaseURI').FLUX_ADDON_DIR.'/support/themes/'.Flux::config('ThemeName').'/img/nicEditorIcons.gif' ?>',
+		iconsPath : '<?php echo Flux::config('AddonThemeName').'/img/nicEditorIcons.gif' ?>',
 		buttonList : ['save','bold','italic','underline','left','center','right','justify','ol','ul','fontSize','fontFamily','fontFormat','indent','outdent','image','upload','link','unlink','forecolor','bgcolor'],
 		iconList : {"bgcolor":1,"forecolor":2,"bold":3,"center":4,"hr":5,"indent":6,"italic":7,"justify":8,"left":9,"ol":10,"outdent":11,"removeformat":12,"right":13,"save":24,"strikethrough":15,"subscript":16,"superscript":17,"ul":18,"underline":19,"image":20,"link":21,"unlink":22,"close":23,"arrow":25,"upload":26}
 		
